@@ -173,6 +173,79 @@
     animation: fadeUp 0.6s 0.65s forwards;
   }
 
+  .icon-row {
+    margin-top: 2.2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(92px, 1fr));
+    gap: 0.65rem;
+    width: 100%;
+    max-width: none;
+    opacity: 0;
+    animation: fadeUp 0.6s 0.8s forwards;
+  }
+
+  .icon-card {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    padding: 0.55rem 0.45rem;
+    min-height: 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+
+  .icon-card:hover {
+    border-color: rgba(0,255,209,0.35);
+    transform: translateY(-2px);
+  }
+
+  .icon-glyph {
+    margin: 0;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 1.45rem;
+    line-height: 1;
+    transition: color 0.2s;
+  }
+
+  .icon-card:hover .icon-glyph {
+    color: #fff;
+  }
+
+  .icon-glyph-img {
+    width: 1.45rem;
+    height: 1.45rem;
+    display: block;
+    filter: grayscale(1) brightness(0) saturate(100%) invert(74%) sepia(77%) saturate(725%) hue-rotate(110deg) brightness(103%) contrast(101%);
+    transition: filter 0.2s;
+  }
+
+  .icon-glyph-brand {
+    width: 2.35rem;
+    height: auto;
+    filter: grayscale(1) brightness(0) saturate(100%) invert(74%) sepia(77%) saturate(725%) hue-rotate(110deg) brightness(103%) contrast(101%);
+    transition: filter 0.2s;
+  }
+
+  .icon-card:hover .icon-glyph-img {
+    filter: brightness(0) saturate(100%) invert(98%) sepia(0%) saturate(0%) hue-rotate(0deg) brightness(105%) contrast(102%);
+  }
+
+  .icon-card:hover .icon-glyph-brand {
+    filter: grayscale(1) brightness(0) invert(1);
+  }
+
+  .icon-label {
+    color: var(--text-muted);
+    font-size: 0.58rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-align: center;
+  }
+
   .btn {
     display: inline-flex;
     align-items: center;
@@ -351,6 +424,7 @@
     nav { padding: 0 1.5rem; }
     .home-inner, .section-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
     .nav-links { gap: 1.2rem; }
+    .icon-row { grid-template-columns: repeat(3, minmax(86px, 1fr)); max-width: 100%; }
   }
 
   .about-bio p {
@@ -410,6 +484,15 @@
     font-size: 0.75rem;
     color: var(--text-muted);
     line-height: 1.6;
+  }
+
+  .profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    margin-bottom: 2rem;
   }
 
   /* ── CONTACT ── */
@@ -562,11 +645,29 @@
       Simon John<br/><span class="accent">Researcher.</span><br/>Builder.
     </h1>
     <p class="home-sub">
-      I sit at the intersection of language and technology — studying how humans communicate while building the tools that shape it. Currently a student; perpetually curious.
+      Bridging the gap between human communication (German, English and Japanese) and strict machine logic. I engineer applications that make learning accessible, structured and satisfying. I am also interested in games and tools that turn complex data into clear insights.
+      <br /><br />
+      If it doesn't exist, I'll build it. If it does, I'll make it better.
     </p>
     <div class="home-actions">
       <button class="btn btn-primary" onclick="showPage('projects')">View Projects →</button>
       <button class="btn btn-outline" onclick="showPage('contact')">Get in Touch</button>
+    </div>
+    <div class="icon-row" aria-hidden="true">
+      <div class="icon-card"><span class="icon-glyph">&lt;/&gt;</span><span class="icon-label">Code</span></div>
+      <div class="icon-card"><span class="icon-glyph">⚙</span><span class="icon-label">Build</span></div>
+      <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" /><span class="icon-label">Python</span></div>
+      <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/javascript.svg" alt="" /><span class="icon-label">JavaScript</span></div>
+      <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/typescript.svg" alt="" /><span class="icon-label">TypeScript</span></div>
+      <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/react.svg" alt="" /><span class="icon-label">React</span></div>
+      <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/nodedotjs.svg" alt="" /><span class="icon-label">Node.js</span></div>
+      <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg" alt="" /><span class="icon-label">Git</span></div>
+      <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/linux.svg" alt="" /><span class="icon-label">Linux</span></div>
+      <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/flutter.svg" alt="" /><span class="icon-label">Flutter</span></div>
+      <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/swift.svg" alt="" /><span class="icon-label">Swift</span></div>
+      <div class="icon-card"><img class="icon-glyph-img icon-glyph-brand" src="https://upload.wikimedia.org/wikipedia/commons/9/92/LaTeX_logo.svg" alt="" /><span class="icon-label">LaTeX</span></div>
+      <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/spacy.svg" alt="" /><span class="icon-label">NLP</span></div>
+      <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/researchgate.svg" alt="" /><span class="icon-label">Research</span></div>
     </div>
   </div>
 </section>
@@ -582,16 +683,16 @@
         <span class="project-num">01</span>
         <h3 class="project-name"><a class="project-title-link" href="https://github.com/Eidolom/llm-corpus-generation-analysis" target="_blank" rel="noopener noreferrer">LLM Corpus Generation & Analysis</a></h3>
         <p class="project-desc">Several Python scripts for generating and analysing large language model corpora. This project is part of my Bachelor's thesis, where I explore the creation of synthetic corpora and comparing them to existing datasets.</p>
-        <div class="project-tags"><span class="tag">Corpus Analysis</span><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">NLTK</span><span class="tag">LLMs</span></div>
+        <div class="project-tags"><span class="tag">Corpus Analysis</span><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">NLTK</span><span class="tag">LLMs</span><span class="tag">API</span></div>
         <a class="project-arrow project-arrow-link" href="https://github.com/Eidolom/llm-corpus-generation-analysis" target="_blank" rel="noopener noreferrer">↗</a>
       </div>
     
       <div class="project-card">
         <span class="project-num">02</span>
-        <h3 class="project-name">Project Name</h3>
-        <p class="project-desc">A short description of what this project does, the problem it solves, or what makes it interesting.</p>
-        <div class="project-tags"><span class="tag">React</span><span class="tag">Node</span></div>
-        <span class="project-arrow">↗</span>
+        <h3 class="project-name"><a class="project-title-link" href="https://play.google.com/store/apps/details?id=com.shoppingu.shoppingu&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Shoppingu</a></h3>
+        <p class="project-desc">A mobile application that helps users shop in foreign countries (currently only supporting Japanese). It helps with translation, currency conversion and additional information.</p>
+        <div class="project-tags"><span class="tag">API</span><span class="tag">LLMs</span><span class="tag">Flutter</span><span class="tag">Android</span><span class="tag">Swift</span></div>
+        <a class="project-arrow project-arrow-link" href="https://play.google.com/store/apps/details?id=com.shoppingu.shoppingu&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">↗</a>
       </div>
 
       <div class="project-card">
@@ -599,46 +700,6 @@
         <h3 class="project-name">Project Name</h3>
         <p class="project-desc">A short description of what this project does, the problem it solves, or what makes it interesting.</p>
         <div class="project-tags"><span class="tag">TypeScript</span><span class="tag">API</span></div>
-        <span class="project-arrow">↗</span>
-      </div>
-
-      <div class="project-card">
-        <span class="project-num">04</span>
-        <h3 class="project-name">Project Name</h3>
-        <p class="project-desc">A short description of what this project does, the problem it solves, or what makes it interesting.</p>
-        <div class="project-tags"><span class="tag">Linguistics</span><span class="tag">Research</span></div>
-        <span class="project-arrow">↗</span>
-      </div>
-
-      <div class="project-card">
-        <span class="project-num">05</span>
-        <h3 class="project-name">Project Name</h3>
-        <p class="project-desc">A short description of what this project does, the problem it solves, or what makes it interesting.</p>
-        <div class="project-tags"><span class="tag">Swift</span><span class="tag">iOS</span></div>
-        <span class="project-arrow">↗</span>
-      </div>
-
-      <div class="project-card">
-        <span class="project-num">06</span>
-        <h3 class="project-name">Project Name</h3>
-        <p class="project-desc">A short description of what this project does, the problem it solves, or what makes it interesting.</p>
-        <div class="project-tags"><span class="tag">Python</span><span class="tag">Data</span></div>
-        <span class="project-arrow">↗</span>
-      </div>
-
-      <div class="project-card">
-        <span class="project-num">07</span>
-        <h3 class="project-name">Project Name</h3>
-        <p class="project-desc">A short description of what this project does, the problem it solves, or what makes it interesting.</p>
-        <div class="project-tags"><span class="tag">Web</span><span class="tag">JavaScript</span></div>
-        <span class="project-arrow">↗</span>
-      </div>
-
-      <div class="project-card">
-        <span class="project-num">08</span>
-        <h3 class="project-name">Project Name</h3>
-        <p class="project-desc">A short description of what this project does, the problem it solves, or what makes it interesting.</p>
-        <div class="project-tags"><span class="tag">CLI</span><span class="tag">Shell</span></div>
         <span class="project-arrow">↗</span>
       </div>
 
@@ -668,6 +729,7 @@
         </div>
       </div>
       <div class="skills-block">
+        <img class="profile-image" src="1757686609117(1).jpg" alt="Simon John" />
         <div class="skills-group">
           <p class="skills-group-title">Languages &amp; Frameworks</p>
           <div class="skills-list">
