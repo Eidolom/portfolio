@@ -9,7 +9,7 @@
 <meta property="og:description" content="Portfolio of Simon John, specializing in NLP, Python, and Flutter development." />
 <meta property="og:image" content="https://yourdomain.com/preview.jpg" />
 <meta property="og:url" content="https://yourdomain.com" />
-<meta name="formsubmit-endpoint" content="https://formsubmit.co/ajax/REPLACE_WITH_FORMSUBMIT_ALIAS" />
+<meta name="formsubmit-endpoint" content="https://formsubmit.co/ajax/simon.john.de@proton.me" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -792,14 +792,14 @@
         <span class="project-arrow">↗</span>
       </a>
 
-      <a class="project-card" href="https://github.com/Eidolom/motif" target="_blank" rel="noopener noreferrer">
+      <div class="project-card">
         <span class="project-num">03</span>
         <span class="project-badge project-badge-development">In development</span>
         <h3 class="project-name">motif</h3>
         <p class="project-desc">A social cataloguing platform for game and anime soundtrack enthusiasts. Cross-platform Flutter app with offline-first architecture, optimistic mutations, Auth0 authentication, Supabase backend and a cinematic player with dynamic palette extraction.</p>
         <div class="project-tags"><span class="tag">Auth0</span><span class="tag">Riverpod</span><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Supabase</span></div>
         <span class="project-arrow">↗</span>
-      </a>
+      </div>
 
     </div>
   </div>
@@ -963,6 +963,9 @@
         c.style.animation = '';
       });
     }
+
+    // Keep the About section fixed (non-scrollable) while allowing normal scroll elsewhere.
+    document.body.style.overflowY = id === 'about' ? 'hidden' : 'auto';
 
     window.scrollTo(0, 0);
   }
