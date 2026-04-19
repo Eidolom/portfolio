@@ -964,8 +964,9 @@
       });
     }
 
-    // Keep the About section fixed (non-scrollable) while allowing normal scroll elsewhere.
-    document.body.style.overflowY = id === 'about' ? 'hidden' : 'auto';
+    // Keep About non-scrollable only on desktop; allow scrolling on mobile.
+    const isDesktop = window.matchMedia('(min-width: 701px)').matches;
+    document.body.style.overflowY = id === 'about' && isDesktop ? 'hidden' : 'auto';
 
     window.scrollTo(0, 0);
   }
