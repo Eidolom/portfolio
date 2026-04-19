@@ -839,10 +839,10 @@
             <span class="social-link-name">LinkedIn</span>
             <span>→</span>
           </a>
-          <a class="social-link" id="email-link" href="#contact" aria-label="Send email">
+          <div class="social-link" aria-label="Use the contact form below">
             <span class="social-link-name">Email</span>
-            <span id="email-text">Reveal</span>
-          </a>
+            <span>Use form below</span>
+          </div>
         </div>
       </div>
       <form class="contact-form" onsubmit="handleForm(event)">
@@ -873,23 +873,6 @@
 </div>
 
 <script>
-  function fromCharCodes(arr) {
-    return String.fromCharCode(...arr);
-  }
-
-  function setupEmailLink() {
-    const link = document.getElementById('email-link');
-    const text = document.getElementById('email-text');
-    if (!link || !text) return;
-
-    const user = fromCharCodes([115, 105, 109, 111, 110, 46, 106, 111, 104, 110, 46, 100, 101]);
-    const domain = fromCharCodes([112, 114, 111, 116, 111, 110, 46, 109, 101]);
-    const email = `${user}@${domain}`;
-
-    link.href = `mailto:${email}`;
-    text.textContent = email;
-  }
-
   // The core routing function
   function showPage(id) {
     // Default to 'home' if no valid id is provided
@@ -936,7 +919,6 @@
 
   // Run this once when the page first loads to check if a hash already exists
   window.addEventListener('DOMContentLoaded', () => {
-    setupEmailLink();
     const hashId = window.location.hash.substring(1);
     showPage(hashId);
   });
