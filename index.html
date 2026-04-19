@@ -446,7 +446,19 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    align-items: start;
+    align-items: stretch;
+  }
+
+  .about-bio {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .about-bio-copy {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   @media (max-width: 700px) {
@@ -489,14 +501,46 @@
 
   .skills-block { margin-top: 0; }
 
-  .skills-group { margin-bottom: 2rem; }
+  .skills-groups-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem 1.25rem;
+  }
+
+  .skills-group {
+    margin-bottom: 0;
+    border: 1px solid var(--border);
+    background: var(--bg2);
+    padding: 0.9rem 1rem;
+  }
+
+  .skills-group-full {
+    grid-column: 1 / -1;
+  }
 
   .skills-group-title {
-    font-size: 0.6rem;
+    font-size: 0.56rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
     color: var(--accent);
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.45rem;
+  }
+
+  .skills-list-compact {
+    list-style-type: none;
+    padding: 0;
+    font-size: 0.74rem;
+    color: var(--text-muted);
+    line-height: 1.55;
+  }
+
+  .skills-list-compact li {
+    margin-bottom: 0.12rem;
+  }
+
+  .skills-list-compact .bullet {
+    color: var(--accent);
+    margin-right: 8px;
   }
 
   .skills-list {
@@ -538,12 +582,12 @@
   }
 
   .profile-image {
-    width: 180px;
-    height: 180px;
+    width: 150px;
+    height: 150px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid var(--accent);
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
 
   /* ── CONTACT ── */
@@ -555,6 +599,7 @@
 
   @media (max-width: 700px) {
     .contact-grid { grid-template-columns: 1fr; }
+    .skills-groups-grid { grid-template-columns: 1fr; }
   }
 
   .contact-intro {
@@ -769,15 +814,17 @@
     <h2 class="section-title">About</h2>
     <div class="about-grid">
       <div class="about-bio">
-        <p>
-          I'm <strong>Simon John</strong>. Formally, I study English Linguistics to understand the underlying architecture of how we communicate. Practically, I write code to push the boundaries of what we can do with that understanding.
-        </p>
-        <p>
-          For me, syntax trees and software architecture aren't that different. Whether I'm analysing a massive text corpus for research or structuring an offline-first database for a Flutter app, my goal is always to turn complex, unstructured data into clean, accessible experiences. Outside of the terminal, you'll likely find me diving into game soundtracks, learning Japanese, or looking for the next problem to solve.
-        </p>
-        <p>
-          I'm currently based in <strong>Germany</strong>, open to collaboration, research partnerships and interesting conversations.
-        </p>
+        <div class="about-bio-copy">
+          <p>
+            I'm <strong>Simon John</strong>. Formally, I study English Linguistics to understand the underlying architecture of how we communicate. Practically, I write code to push the boundaries of what we can do with that understanding.
+          </p>
+          <p>
+            For me, syntax trees and software architecture aren't that different. Whether I'm analysing a massive text corpus for research or structuring an offline-first database for a Flutter app, my goal is always to turn complex, unstructured data into clean, accessible experiences. Outside of the terminal, you'll likely find me diving into game soundtracks, learning Japanese, or looking for the next problem to solve.
+          </p>
+          <p>
+            I'm currently based in <strong>Germany</strong>, open to collaboration, research partnerships and interesting conversations.
+          </p>
+        </div>
         <div class="resume-box">
           <p>My CV — education, experience and skills in one document.</p>
           <a class="btn btn-outline" href="resume.pdf" download>Download CV</a>
@@ -785,34 +832,49 @@
       </div>
       <div class="skills-block">
         <img class="profile-image" src="1757686609117(1).jpg" alt="Simon John" />
-        <div class="skills-group">
-          <p class="skills-group-title">Languages &amp; Frameworks</p>
-          <div class="skills-list">
-            <span class="skill-pill">Python</span>
-            <span class="skill-pill">JavaScript</span>
-            <span class="skill-pill">TypeScript</span>
-            <span class="skill-pill">React</span>
-            <span class="skill-pill">Node.js</span>
-            <span class="skill-pill">Swift</span>
+        <div class="skills-groups-grid">
+          <div class="skills-group">
+            <p class="skills-group-title">Research Interests</p>
+            <ul class="skills-list-compact">
+              <li><span class="bullet">—</span>Corpus Generation &amp; Analysis</li>
+              <li><span class="bullet">—</span>Natural Language Processing</li>
+              <li><span class="bullet">—</span>Syntax &amp; Pragmatics</li>
+              <li><span class="bullet">—</span>LLM-Generated Content</li>
+              <li><span class="bullet">—</span>Workflow Automation</li>
+            </ul>
           </div>
-        </div>
-        <div class="skills-group">
-          <p class="skills-group-title">Linguistics &amp; Research</p>
-          <div class="skills-list">
-            <span class="skill-pill">Corpus Analysis</span>
-            <span class="skill-pill">NLP</span>
-            <span class="skill-pill">Phonetics</span>
-            <span class="skill-pill">Pragmatics</span>
-            <span class="skill-pill">Discourse Analysis</span>
+          <div class="skills-group">
+            <p class="skills-group-title">Languages</p>
+            <ul class="skills-list-compact">
+              <li><span class="bullet">—</span>German (Native)</li>
+              <li><span class="bullet">—</span>English (C2)</li>
+              <li><span class="bullet">—</span>Japanese (B2)</li>
+            </ul>
           </div>
-        </div>
-        <div class="skills-group">
-          <p class="skills-group-title">Tools &amp; Platforms</p>
-          <div class="skills-list">
-            <span class="skill-pill">Git / GitHub</span>
-            <span class="skill-pill">Linux</span>
-            <span class="skill-pill">VS Code</span>
-            <span class="skill-pill">Figma</span>
+          <div class="skills-group">
+            <p class="skills-group-title">Currently Learning</p>
+            <ul class="skills-list-compact">
+              <li><span class="bullet">—</span>Advanced Japanese semantics</li>
+              <li><span class="bullet">—</span>Linux</li>
+              <li><span class="bullet">—</span>Scalable offline-first databases</li>
+            </ul>
+          </div>
+          <div class="skills-group">
+            <p class="skills-group-title">Future Projects</p>
+            <ul class="skills-list-compact">
+              <li><span class="bullet">—</span>Cross-lingual LLM applications</li>
+              <li><span class="bullet">—</span>Linguistic data visualization tools</li>
+              <li><span class="bullet">—</span>Expanding motif's social cataloguing</li>
+              <li><span class="bullet">—</span>Moto: All-you-can-eat value tracking app</li>
+            </ul>
+          </div>
+          <div class="skills-group skills-group-full">
+            <p class="skills-group-title">Beyond the Screen</p>
+            <ul class="skills-list-compact">
+              <li><span class="bullet">—</span>Travelling Japan</li>
+              <li><span class="bullet">—</span>Curating game &amp; anime soundtracks</li>
+              <li><span class="bullet">—</span>Deep dives into audio-visual aesthetics</li>
+            </ul>
           </div>
         </div>
       </div>
