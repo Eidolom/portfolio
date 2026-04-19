@@ -347,6 +347,30 @@
     color: var(--text-dim);
   }
 
+  .project-badge {
+    display: inline-flex;
+    align-self: flex-start;
+    padding: 0.24rem 0.6rem;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-size: 0.58rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+
+  .project-badge-complete {
+    background: rgba(0, 255, 209, 0.12);
+    border-color: rgba(0, 255, 209, 0.28);
+    color: var(--accent);
+  }
+
+  .project-badge-development {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: var(--border);
+    color: var(--text-muted);
+  }
+
   .project-name {
     font-family: var(--font-display);
     font-size: 1.15rem;
@@ -654,8 +678,8 @@
       <button class="btn btn-outline" onclick="showPage('contact')">Get in Touch</button>
     </div>
     <div class="icon-row" aria-hidden="true">
-      <div class="icon-card"><span class="icon-glyph">&lt;/&gt;</span><span class="icon-label">Code</span></div>
-      <div class="icon-card"><span class="icon-glyph">⚙</span><span class="icon-label">Build</span></div>
+      <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/dart.svg" alt="" /><span class="icon-label">Dart</span></div>
+      <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/html5.svg" alt="" /><span class="icon-label">HTML</span></div>
       <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="" /><span class="icon-label">Python</span></div>
       <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/javascript.svg" alt="" /><span class="icon-label">JavaScript</span></div>
       <div class="icon-card"><img class="icon-glyph-img" src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/typescript.svg" alt="" /><span class="icon-label">TypeScript</span></div>
@@ -681,6 +705,7 @@
 
       <div class="project-card">
         <span class="project-num">01</span>
+        <span class="project-badge project-badge-complete">Complete</span>
         <h3 class="project-name"><a class="project-title-link" href="https://github.com/Eidolom/llm-corpus-generation-analysis" target="_blank" rel="noopener noreferrer">LLM Corpus Generation & Analysis</a></h3>
         <p class="project-desc">Several Python scripts for generating and analysing large language model corpora. This project is part of my Bachelor's thesis, where I explore the creation of synthetic corpora and comparing them to existing datasets.</p>
         <div class="project-tags"><span class="tag">Corpus Analysis</span><span class="tag">Python</span><span class="tag">NLP</span><span class="tag">NLTK</span><span class="tag">LLMs</span><span class="tag">API</span></div>
@@ -689,18 +714,20 @@
     
       <div class="project-card">
         <span class="project-num">02</span>
+        <span class="project-badge project-badge-complete">Complete</span>
         <h3 class="project-name"><a class="project-title-link" href="https://play.google.com/store/apps/details?id=com.shoppingu.shoppingu&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">Shoppingu</a></h3>
         <p class="project-desc">A mobile application that helps users shop in foreign countries (currently only supporting Japanese). It helps with translation, currency conversion and additional information.</p>
-        <div class="project-tags"><span class="tag">API</span><span class="tag">LLMs</span><span class="tag">Flutter</span><span class="tag">Android</span><span class="tag">Swift</span></div>
+        <div class="project-tags"><span class="tag">API</span><span class="tag">LLMs</span><span class="tag">Flutter</span><span class="tag">Android</span><span class="tag">Swift</span><span class="tag">Dart</span></div>
         <a class="project-arrow project-arrow-link" href="https://play.google.com/store/apps/details?id=com.shoppingu.shoppingu&pcampaignid=web_share" target="_blank" rel="noopener noreferrer">↗</a>
       </div>
 
       <div class="project-card">
         <span class="project-num">03</span>
-        <h3 class="project-name">Project Name</h3>
-        <p class="project-desc">A short description of what this project does, the problem it solves, or what makes it interesting.</p>
-        <div class="project-tags"><span class="tag">TypeScript</span><span class="tag">API</span></div>
-        <span class="project-arrow">↗</span>
+        <span class="project-badge project-badge-development">In development</span>
+        <h3 class="project-name"><a class="project-title-link" href="https://github.com/Eidolom/motif" target="_blank" rel="noopener noreferrer">motif</a></h3>
+        <p class="project-desc">A social cataloguing platform for game and anime soundtrack enthusiasts. Cross-platform Flutter app with offline-first architecture, optimistic mutations, Auth0 authentication, Supabase backend and a cinematic player with dynamic palette extraction.</p>
+        <div class="project-tags"><span class="tag">Auth0</span><span class="tag">Riverpod</span><span class="tag">Flutter</span><span class="tag">Dart</span><span class="tag">Supabase</span></div>
+        <a class="project-arrow project-arrow-link" href="https://github.com/Eidolom/motif" target="_blank" rel="noopener noreferrer">↗</a>
       </div>
 
     </div>
@@ -715,16 +742,16 @@
     <div class="about-grid">
       <div class="about-bio">
         <p>
-          I'm <strong>Simon John</strong>, a student of English Linguistics with a deep interest in how language works — and how technology can extend, analyze, and interact with it.
+          I'm <strong>Simon John</strong>, a student of English Linguistics with a deep interest in how language works — and how technology can extend, analyse and interact with it.
         </p>
         <p>
           Outside the classroom, I build apps and tools. My GitHub is where theory meets practice: projects range from NLP experiments to full-stack applications. I enjoy the challenge of combining rigorous linguistic thinking with clean, purposeful code.
         </p>
         <p>
-          I'm currently based in <strong>Germany</strong>, open to collaboration, research partnerships, and interesting conversations.
+          I'm currently based in <strong>Germany</strong>, open to collaboration, research partnerships and interesting conversations.
         </p>
         <div class="resume-box">
-          <p>My CV — education, experience, and skills in one document.</p>
+          <p>My CV — education, experience and skills in one document.</p>
           <a class="btn btn-outline" href="resume.pdf" download>Download CV</a>
         </div>
       </div>
@@ -773,7 +800,7 @@
     <div class="contact-grid">
       <div>
         <p class="contact-intro">
-          Whether you have a project idea, a research question, or just want to talk — I'm always happy to connect. Response time: usually within 48 hours.
+          Whether you have a project idea, a research question or just want to talk — I'm always happy to connect. Response time: usually within 48 hours.
         </p>
         <div class="social-links">
           <a class="social-link" href="https://github.com/Eidolom" target="_blank">
@@ -871,7 +898,7 @@
       form.reset();
     } catch (err) {
       status.style.color = '#ff6b6b';
-      status.textContent = err.message || 'Sending failed. Please try again, or email me directly.';
+      status.textContent = err.message || 'Sending failed. Please try again or email me directly.';
     } finally {
       submitBtn.disabled = false;
     }
