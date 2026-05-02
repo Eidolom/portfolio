@@ -1035,9 +1035,8 @@
       });
     }
 
-    // Keep About non-scrollable only on desktop; allow scrolling on mobile.
-    const isDesktop = window.matchMedia('(min-width: 701px)').matches;
-    document.body.style.overflowY = id === 'about' && isDesktop ? 'hidden' : 'auto';
+    // Always allow scrolling on all pages
+    document.body.style.overflowY = 'auto';
 
     window.scrollTo(0, 0);
   }
