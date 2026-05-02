@@ -42,6 +42,12 @@
     overflow-x: hidden;
   }
 
+  @media (max-width: 700px) {
+    body {
+      font-size: 14px;
+    }
+  }
+
   /* ── noise overlay ── */
   body::before {
     content: '';
@@ -531,14 +537,24 @@
       font-size: 0.85rem;
     }
     .home-inner, .section-inner { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .home-heading { font-size: clamp(1.8rem, 5vw, 3rem); margin-bottom: 1rem; }
+    .home-tag { font-size: 0.55rem; margin-bottom: 1rem; }
+    .home-sub { font-size: 0.75rem; line-height: 1.6; margin-bottom: 1.5rem; }
+    .home-actions { gap: 0.75rem; }
+    .btn { padding: 0.6rem 1.25rem; font-size: 0.6rem; }
     .icon-row { grid-template-columns: repeat(auto-fit, minmax(75px, 1fr)); gap: 0.5rem; }
   }
 
   @media (max-width: 480px) {
+    body { font-size: 12px; }
     .icon-row { grid-template-columns: repeat(auto-fit, minmax(70px, 1fr)); gap: 0.4rem; }
     .home-inner, .section-inner { padding-left: 1rem; padding-right: 1rem; }
+    .home-heading { font-size: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 0.75rem; }
+    .home-tag { font-size: 0.5rem; margin-bottom: 0.75rem; }
+    .home-sub { font-size: 0.65rem; line-height: 1.5; margin-bottom: 1rem; }
     .icon-card { min-height: 90px; padding: 0.4rem 0.35rem; }
     .icon-label { font-size: 0.52rem; }
+    .btn { padding: 0.5rem 1rem; font-size: 0.55rem; }
   }
 
   .about-bio p {
